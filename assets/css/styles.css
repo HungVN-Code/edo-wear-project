@@ -15,6 +15,7 @@
     --col-black: #333333;
     --col-red: #EB3E32;
     --col-blue: #3B5999;
+    --col-border: #E5E5E5;
     --text-gray: #888888;
     --text-pr: #adadad;
 }
@@ -90,6 +91,10 @@
 }
 
 .search-form input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
     width: 100%;
     height: 100%;
     border-radius: 3rem;
@@ -108,6 +113,93 @@
     right: .6rem;
     font-size: 1rem;
     color: var(--col-black);
+}
+
+/* search result */
+.search-result {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.33);
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.search-list {
+    width: 100%;
+    max-height: 400px;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: .5rem;
+}
+
+.search-item a {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: .5rem;
+    border-bottom: 1px dotted var(--col-border);
+}
+
+.search-item a img {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+}
+
+.search-item a nav {
+    padding-left: .5rem;
+}
+
+.search-item a nav h4 {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+.search-item a:hover h4 {
+    color: var(--col-red);
+}
+
+.search-item a nav p {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--col-black);
+}
+
+.search-below {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid var(--col-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-below a {
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--col-black);
+    cursor: pointer;
+}
+
+.search-below a:hover {
+    color: var(--col-red);
 }
 
 .header-bw .contact-box {
