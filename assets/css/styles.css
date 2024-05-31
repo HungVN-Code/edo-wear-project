@@ -15,9 +15,24 @@
     --col-black: #333333;
     --col-red: #EB3E32;
     --col-blue: #3B5999;
+    --col-green: green;
     --col-border: #E5E5E5;
     --text-gray: #888888;
     --text-pr: #adadad;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--col-red);
+    border: 1px solid var(--col-gray);
+    border-radius: 3rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--col-gray);
 }
 
 .btx {
@@ -840,6 +855,113 @@
 
 .inslide-item:nth-child(6) {
     animation-delay: calc(30s / 6 * (6 - 6) * -1);
+}
+
+
+/* contact */
+.contact {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 180px;
+    height: auto;
+}
+
+.contact-item a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    line-height: 52px;
+    padding: 0 1rem;
+    border-radius: 0 3rem 3rem 0;
+    margin-bottom: .5rem;
+    transform: translateX(-130px);
+    transition: all .4s ease;
+}
+
+.contact-item:nth-child(1) a {
+    background: var(--col-blue);
+}
+
+.contact-item:nth-child(2) a {
+    background: var(--col-black);
+}
+
+.contact-item:hover a {
+    transform: translateX(0);
+}
+
+.contact-item a h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--col-white);
+}
+
+.contact-item a i {
+    font-size: 1.5rem;
+    color: var(--col-white);
+}
+
+
+/* mess */
+.mess {
+    position: fixed;
+    top: 3%;
+    right: 2%;
+    z-index: 500;
+    background: transparent;
+    width: 250px;
+    height: auto;
+    padding: 0 .5rem .5rem .5rem;
+    border-radius: .5rem;
+    border: 2px solid transparent;
+    display: none;
+}
+
+.mess.show {
+    display: block;
+}
+
+.mess.success {
+    background: #4fd883;
+    border: 2px solid var(--col-green);
+}
+
+.mess.error {
+    background: #ff7f7f;
+    border: 2px solid var(--col-red);
+}
+
+.mess header {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--col-white);
+}
+
+.mess header i {
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.mess.success header i:hover {
+    color: var(--col-green);
+}
+
+.mess.error header i:hover {
+    color: var(--col-red);
+}
+
+.mess p {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--col-white);
 }
 
 
